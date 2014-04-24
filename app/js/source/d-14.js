@@ -14,6 +14,8 @@ function init(){
 
 
 function makeRect() {
+  $('body').append('<div class="rectangle"></div>');
+
   var wid = Math.floor(Math.random() * 100);
   var leng = Math.floor(Math.random() * 100);
 
