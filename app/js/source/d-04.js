@@ -11,11 +11,8 @@ function init(){
 
   function equation(){
     var value = $('#input').val();
-    // console.log(value);
     var array = value.split('-');
-    // console.log(array);
     var nums = array[0].split(',');
-    // debugger;
     var exp = array[1].split(',');
 
     for(var i = 0; i < exp.length; i++){
@@ -32,10 +29,7 @@ function init(){
 
  }
 
-  // function createTable(nums, exp, answer){
-  //   // var $table = $('<table></table>');
-  //
-  // }
+
 
 
 })();
