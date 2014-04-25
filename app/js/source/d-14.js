@@ -9,12 +9,13 @@ $(document).ready(init);
 
 
 function init(){
- makeRect();
+
+  $('#go').click(makeRect);
+
 }
 
 
 function makeRect() {
-  $('body').append('<div class="rectangle"></div>');
 
   var wid = Math.floor(Math.random() * 100);
   var leng = Math.floor(Math.random() * 100);
@@ -36,12 +37,14 @@ function colorRect() {
   placeBox();
 }
 
-function placeBox(x, y) {
-  var posX = Math.floor(Math.random() * (h - y - 38));
-  var posY = Math.floor(Math.random() * (w - x));
- $('.rectangle').css({'position': 'relative','top' : posY + 'px', 'left' : posX + 'px'});
-
+function placeBox() {
+  var $div = $('<div class="rectangle"><div>');
+  var posX = Math.floor(Math.random() * h);
+  var posY = Math.floor(Math.random() * w);
+ $($div).css({'position': 'relative','top' : posY + 'px', 'left' : posX + 'px'});
     // numRect(place);
+  $('body').append($div);
+
   }
 
 

@@ -1,0 +1,26 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Stock Graph
+    link(rel='stylesheet', href='./css/d-25.css')
+
+  body
+    h1 Drill 25 - Stock Donut
+
+#controls
+  input#symbol(type='text' placeholder="Stock Symbol")
+  input#shares(type='text' placeholder="# of Shares")
+  button#get GO
+
+#graph
+
+
+
+    script(src='./js/vendor/jquery-2.1.0.js')
+    script(type='text/javascript', src='http://www.amcharts.com/lib/3/amcharts.js')
+    script(type='text/javascript', src='http://www.amcharts.com/lib/3/pie.js')
+    script(type='text/javascript', src='http://www.amcharts.com/lib/3/themes/dark.js')
+
+
+    script(src='./js/source/d-25.js')
