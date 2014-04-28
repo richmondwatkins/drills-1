@@ -23,7 +23,7 @@ function init(){
   }
 
   function weather(conditions){
-    var current = conditions.current_observation.wind_gust_mph;
+    var current = conditions.current_observation.wind_mph;
     gaugeChart.arrows[0].setValue(current);
     gaugeChart.axes[0].setBottomText(current + ' mph');
   }

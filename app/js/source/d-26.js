@@ -21,24 +21,32 @@ function init(){
 
   }
 
+
   function weather(conditions){
+
     var icons = conditions.forecast.simpleforecast.forecastday.map(urls);
-    // var  temp = conditions.forecast.simpleforecast.forecastday.map(temps).forEach(append);
+    var  temp = conditions.forecast.simpleforecast.forecastday.map(temps);
     var  day = conditions.forecast.simpleforecast.forecastday.map(days);
 
-    append(icons, day);
+  // console.log(icons, day);
+  // debugger;
+  //   append(icons, day);
+
+    append(icons,day,temp);
   }
 
-  function append (icons, day){
-    var $img = $('<img>');
-    var $day= $('<div>');
-
+  function append (icons, day, temp){
     for(var i = 0; i < day.length; i ++) {
-
-    $day.text(day[i]);
+    var $img = $('<img>');
+    var $divDay = $('<div>');
+    var $divTemp = $('<div>');
+    var $container = $('<div class="container">');
+    $divTemp.text(temp[i]);
+    $divDay.text(day[i]);
     $img.attr('src', icons[i]);
+    $container.append($img).append($divTemp).append($divDay);
 
-    $('#forecast').append($img[i]).append($day[i]);
+    $('body').append($container);
 
   }
 }
@@ -59,9 +67,9 @@ function init(){
     return conditions.icon_url;
   }
 
-  // function temps(conditions) {
-  //   return conditions.high.fahrenheit;
-  // }
+   function temps(conditions) {
+     return conditions.high.fahrenheit;
+   }
 
 
 
